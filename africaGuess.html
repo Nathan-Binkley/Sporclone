@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<!--
+
+In this file, comments are used to identify different parts of the code by letter.
+The Sporclone Instructions file will refer to letters when describing the sequence of
+steps necessary to create a working Sporclone game. Complete the project according
+to the order of the NUMBERED instructions, not the order of the letters.
+
+DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
+
+-->
+
+<html>
+<head>
+<!-- a. -->
+<title>Sporclone: Africa</title>
+
+<!-- b. -->
+<link rel='stylesheet' href="style.css">
+
+<!-- You may optionally style the table in your answers section here. -->
+<style>
+table {
+    
+}
+
+tr {
+    
+}
+
+th {
+    
+}
+
+td {
+    padding: 5px;
+    text-align:center;
+}
+
+table span {
+    /* applies only to span tags within table */
+    border: 1px solid #AAAAAA;
+    display: inline-block;
+    height: 20px;
+    width: 200px;
+}
+
+.unhide {
+    -webkit-filter: blur(0px) !important;
+    filter: blur(0px) !important;
+}
+
+#answers {
+    -webkit-filter: blur(15px);
+    transition: -webkit-filter 2s ease;
+    
+    filter: blur(15px);
+    transition: filter 2s ease;
+}
+</style>
+
+<script>
+/*********** Game configuration ***********/
+
+// c.
+var answers = ["Algeria", "Angolia", "Benin", "Botswana", "Burkina | Faso | Burkina Faso", "Burundi", "Capo Verde | Verde | Capo", "Cameroon", "Central African Republic | African Republic", "Chad", "Camoros", "Congo", "Democratic Republic of the Congo | Democratc Republic Congo", "Cote d'lviore | Cote", "Djibouti", "Egypt", "Equitorial Guinea", "Eritrea", "Etheopia", "Gabon", "Gambia", "Ghana", "Guinea", "Guinea-Bissau | Bissau", "Kenya", "Lesotho", "Liberia", "Libya", "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", "Mozambique", "Nambia", "Niger", "Nigeria", "Rwanda", "Sao Tome and Principe | Principe | Sao Tome", "Senegal", "Seychelles", "Sierra Leone", "Somalia", "Somalia", "South Africa", "South Sudan", "Sudan", "Swaziland", "Tanzania", "Togo", "Tunisia", "Uganda", "Zambia", "Zimbabwe"];
+
+// d.
+var time_limit = 300;
+</script>
+
+
+<!-- e. -->
+<script src="sporclone.js"></script>
+
+</head>
+
+
+<!-- f. -->
+<body onload="setup()">
+
+<header>
+    <h1>Sporclone</h1>
+</header>
+
+<div class="frame">
+    
+    <section>
+
+        <aside>
+            <h3>More Games</h3>
+            <ul>
+            <!-- g. -->
+            <li><a href="nicCageGuess.html">Nicolas Cage</a></li>
+            <li><a href="memeGuess.html">Meme Dream</a></li>
+            </ul>
+        </aside>
+        
+        <!-- h. -->
+        <img class="icon" src="img/africa.png" alt="quiz logo">
+
+        <!-- i. -->
+        <h2>Guess the 55 African countries.</h2>
+
+    </section>
+
+    <section>
+        
+        <div class="column">
+            <!-- j. -->
+            <input id="start" onclick="start()" type="button" value="PLAY GAME">
+        </div>
+
+        <div class="column">
+            <!-- k. -->
+            <h3>Enter Country</h3>
+
+            <!-- l.  -->
+            <input id="guess" oninput="check()" type="text">
+        </div>
+
+        <div class="column">
+            <h3>Score</h3>
+            <span id="score"></span>
+        </div>
+        
+        <div class="column">
+            <h3>Time</h3>
+            <span id="time"></span>
+        </div>
+
+    </section> 
+    
+    <section>
+
+        <!-- m. -->
+        <table id="answers">
+        <tr>
+            <td><span id="answer0"></span></td>
+            <td><span id="answer1"></span></td>
+            <td><span id="answer2"></span></td>
+            <td><span id="answer3"></span></td>
+        </tr>
+        <tr>
+            <td><span id="answer4"></span></td>
+            <td><span id="answer5"></span></td>
+            <td><span id="answer6"></span></td>
+            <td><span id="answer7"></span></td>
+        </tr>
+        <tr>
+            <td><span id="answer8"></span></td>
+            <td><span id="answer9"></span></td>
+            <td><span id="answer10"></span></td>
+            <td><span id="answer11"></span></td>
+        </tr>
+        <tr>
+            <td><span id="answer12"></span></td>
+            <td><span id="answer13"></span></td>
+            <td><span id="answer14"></span></td>
+            <td><span id="answer15"></span></td>
+        </tr>
+        <tr>
+            <td><span id="answer16"></span></td>
+            <td><span id="answer17"></span></td>
+            <td><span id="answer18"></span></td>
+            <td><span id="answer19"></span></td>
+        </tr>
+        <tr>
+            <td><span id="answer20"></span></td>
+            <td><span id="answer21"></span></td>
+            <td><span id="answer22"></span></td>
+            <td><span id="answer23"></span></td>
+        </tr>
+        <tr>
+            <td><span id="answer24"></span></td>
+            <td><span id="answer25"></span></td>
+            <td><span id="answer26"></span></td>
+            <td><span id="answer27"></span></td>
+        </tr>
+        <tr>
+            <td><span id="answer28"></span></td>
+            <td><span id="answer29"></span></td>
+            <td><span id="answer30"></span></td>
+            <td><span id="answer31"></span></td>
+        </tr>
+        <tr>
+            <td><span id="answer32"></span></td>
+            <td><span id="answer33"></span></td>
+            <td><span id="answer34"></span></td>
+            <td><span id="answer35"></span></td>
+        </tr>
+        <tr>
+            <td><span id="answer36"></span></td>
+            <td><span id="answer37"></span></td>
+            <td><span id="answer38"></span></td>
+            <td><span id="answer39"></span></td>
+        </tr>
+        <tr>
+            <td><span id="answer40"></span></td>
+            <td><span id="answer41"></span></td>
+            <td><span id="answer42"></span></td>
+            <td><span id="answer43"></span></td>
+        </tr>
+        <tr>
+            <td><span id="answer44"></span></td>
+            <td><span id="answer45"></span></td>
+            <td><span id="answer46"></span></td>
+            <td><span id="answer47"></span></td>
+        </tr>
+        <tr>
+            <td><span id="answer48"></span></td>
+            <td><span id="answer49"></span></td>
+            <td><span id="answer50"></span></td>
+            <td><span id="answer51"></span></td>
+        </tr>
+        <tr>
+            <td><span id="answer52"></span></td>
+            <td><span id="answer53"></span></td>
+            <td><span id="answer54"></span></td>
+        </tr>
+        </table>
+
+    </section>
+
+    <footer>
+
+        <!-- n. -->
+        <p>Quiz by Nathan Binkley</p>
+        
+        <p>Source: <a href="https://www.countries-ofthe-world.com/countries-of-africa.html">Country-y</a></p>
+
+    </footer>
+
+</div>
+
+
+</body>
+</html>
